@@ -1,0 +1,32 @@
+page-home {
+    .card-content {
+        text-align: left;
+    }
+    ion-icon .menu {
+        color: #ffffff;
+    }
+    .toolbar-background {
+        background: #0075e3;
+        background: linear-gradient(to right, #0075e3, #00a6ff); //#83c621;
+    }
+    .h2 {
+        display: inline-block;
+    }
+    .card {
+        background: #d3d3d3;
+    }
+    .card .item {
+        background: #d3d3d3;
+    }
+    .button-clear {
+        color: #fc8c14;
+    }
+    .primary1 {
+        background: linear-gradient(to right, #0075e3, #00a6ff);
+        color: #fff;
+    }
+    .searchbar {
+        background: palevioletred;
+        padding: 1px;
+    }
+}

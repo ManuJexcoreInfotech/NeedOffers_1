@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu" class="menu"></ion-icon>
+    </button>
+        <ion-title>Home</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+              <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <ion-row>
+        <ion-col col-9>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="newItem" placeholder="New Shopping item"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <button ion-button [disabled]="!newItem" (click)="addItem()">Add!</button>
+        </ion-col>
+    </ion-row>
+
+    <ion-list>
+        <ion-item-sliding *ngFor="let item of shoppingItems | async">
+            <ion-item>
+                {{ item }}
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list> -->
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12>
+                <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)" placeholder="e.g I want or i can do."></ion-searchbar>
+            </ion-col>
+            <!--  (ionInput)="getItems($event)"  -->
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <button ion-button class="primary1" full (click)="searchItem(searchQuery)">Search</button>
+            </ion-col>
+
+            <ion-col col-6>
+                <button ion-button class="primary1" full (click)="suggestItem(searchQuery)">Suggest</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <ion-card *ngFor="let card of skillList; let i = index;">
+        <!-- {{ cards }} -->
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="{{ avatarPath }}">
+            </ion-avatar>
+            <h2 class="h2">{{card.Name}} </h2>
+            <h2 class="h2"> {{card.Lastname}}</h2>
+            <p>{{ card.Title }}</p>
+        </ion-item>
+
+        <!-- <img src="https://ionicframework.com/dist/preview-app/www/assets/img/advance-card-bttf.png"> -->
+
+        <ion-card-content>
+            <p>{{ card.Data }}</p>
+        </ion-card-content>
+
+        <ion-row>
+            <ion-col>
+                <button ion-button icon-left clear small>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>{{ i * 2 }} Likes</div>
+              </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>4 Comments</div>
+              </button>
+            </ion-col>
+            <ion-col center text-center>
+                <ion-note>
+                    5 days ago
+                </ion-note>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+</ion-content>

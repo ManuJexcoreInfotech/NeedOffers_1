@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title text-center>
+            <ion-icon name="clipboard"></ion-icon>
+            Register
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+
+        <ion-card-header>
+            <strong>Registration Form</strong>
+        </ion-card-header>
+
+    </ion-card>
+
+    <form [formGroup]="registrationForm">
+        <ion-list>
+
+            <ion-item>
+                <ion-label floating><strong>First Name </strong></ion-label>
+                <ion-input type="text" [(ngModel)]="firstName" formControlName="firstName"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating><strong>Last Name </strong></ion-label>
+                <ion-input type="text" [(ngModel)]="lastName" formControlName="lastName"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label floating><strong>Email ID </strong> </ion-label>
+                <ion-input type="text" [(ngModel)]="email" formControlName="email"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+
+                <ion-label floating><strong>Password </strong></ion-label>
+                <ion-input type="password" [(ngModel)]="password" formControlName="password"></ion-input>
+            </ion-item>
+
+
+        </ion-list>
+
+        <div padding>
+
+            <button ion-button icon-center round block (tap)="registerStudent()" [disabled]=!registrationForm.valid>
+ Register &nbsp; &nbsp;<ion-icon name="play"></ion-icon>
+</button>
+        </div>
+    </form>
+
+
+</ion-content>

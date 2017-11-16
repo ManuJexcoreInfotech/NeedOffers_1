@@ -1,0 +1,43 @@
+page-signup {
+    .splash-logo {
+        margin: auto;
+        background: url('../assets/img/add-user.png') repeat transparent;
+        background-size: 100%;
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+    }
+    .deleteIcon {
+        position: absolute !important;
+        color: #ffffff !important;
+        margin-left: 80% !important;
+        transform: rotate(45deg);
+    }
+    .deleteIcon:before {
+        font-size: 30px !important;
+    }
+    .releative {
+        position: relative
+    }
+    .a {
+        width: 100%;
+        float: left;
+        text-align: center;
+        position: relative;
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+    }
+    .avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+}

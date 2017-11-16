@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+        <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+        <ion-title text-center>
+            <ion-icon name="contact"></ion-icon>
+            Login
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+
+        <ion-card-header>
+            <strong>Welcome</strong>
+        </ion-card-header>
+
+    </ion-card>
+    <br>
+    <form [formGroup]="loginForm">
+        <ion-list>
+
+            <ion-item>
+                <ion-label><strong>Email</strong></ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label><strong>Password</strong></ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+
+        </ion-list>
+
+        <div padding>
+
+            <button ion-button icon-center round block (tap)="login()" [disabled]=!loginForm.valid>
+   Login &nbsp; &nbsp;<ion-icon name="aperture"></ion-icon>
+</button>
+        </div>
+        <div padding>
+            <button ion-button icon-right round block (click)="goto()">Regsiter<ion-icon name="clipboard"></ion-icon>
+            </button>
+        </div>
+    </form>
+</ion-content>

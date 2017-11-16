@@ -1,0 +1,13 @@
+page-registration {
+    .invalid {
+        border-bottom: 1px solid #FF6153;
+    }
+    ion-card {
+        position: relative;
+        text-align: center;
+    }
+    .toolbar-background {
+        background: #0075e3;
+        background: linear-gradient(to right, #0075e3, #00a6ff); //#83c621;
+    }
+}

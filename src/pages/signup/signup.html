@@ -1,0 +1,93 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Sign Up</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <div class="splash-logo" (click)='takePhoto()'></div>
+
+    <!-- <ion-grid>
+        <ion-row>
+            <ion-col col-6 *ngFor="let photo of photos; let id = index">
+                <ion-card class="releative">
+
+                    <ion-icon ios="ios-add-circle" md="md-add-circle" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+                    <img [src]="photo" *ngIf="photo" style="float:left;width:80px;height:80px;" />
+
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid> -->
+
+    <div (click)="deletePhoto(1)" class="a">
+        <img [src]="_DomSanitizer.bypassSecurityTrustUrl(captureDataUrl)" *ngIf="captureDataUrl" style="float:left;width:80px;height:80px;" />
+    </div>
+
+    <form (submit)="doSignup()">
+        <ion-list>
+
+            <ion-item>
+                <ion-label stacked>Skill Set (separate with comma)</ion-label>
+                <ion-input type="text" [(ngModel)]="skills" name="skills" placeholder="eg. PHP, Writing, Chef" required="required"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Email</ion-label>
+                <ion-input type="email" [(ngModel)]="email" name="email" placeholder="eg. john@doe.com"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label stacked>Password</ion-label>
+                <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Confirm Password</ion-label>
+                <ion-input type="password" [(ngModel)]="repeat-password" name="repeat-password"></ion-input>
+            </ion-item>
+
+            <hr/>
+            <ion-item>
+                <ion-label stacked>First Name</ion-label>
+                <ion-input type="text" [(ngModel)]="first_name" name="first_name"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Last Name</ion-label>
+                <ion-input type="text" [(ngModel)]="last_name" name="last_name"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label stacked>Country</ion-label>
+                <ion-input type="text" [(ngModel)]="country" name="country"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>State</ion-label>
+                <ion-input type="text" [(ngModel)]="state" name="state"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>City</ion-label>
+                <ion-input type="text" [(ngModel)]="city" name="city"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label stacked>Phone</ion-label>
+                <ion-input type="text" [(ngModel)]="phone" name="phone" placeholder="eg. 0802222222" required="required"></ion-input>
+            </ion-item>
+
+
+            <div padding text-center>
+                <button ion-button color="danger" round>Sign Up</button>
+            </div>
+
+        </ion-list>
+    </form>
+</ion-content>

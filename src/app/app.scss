@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Roboto Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/roboto-regular.ttf');
+}
+
+.toolbar-title {
+    color: #ffffff;
+    font-family: 'Roboto Regular';
+    font-size: 18px;
+}
+
+.toolbar-background {
+    background: #0075e3;
+    background: linear-gradient(to right, #0075e3, #00a6ff); //#83c621;
+}
+
+.toolbar button {
+    color: #ffffff;
+}

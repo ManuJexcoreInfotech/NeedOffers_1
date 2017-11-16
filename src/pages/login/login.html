@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Sign In</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="splash-logo"></div>
+    <br/>
+    <br/>
+
+    <form>
+        <ion-list>
+
+            <ion-item>
+                <ion-label stacked>Email</ion-label>
+                <ion-input type="email" [(ngModel)]="email" name="email" required="required"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label stacked>Password</ion-label>
+                <ion-input type="password" [(ngModel)]="password" name="password" required="required"></ion-input>
+            </ion-item>
+
+            <div padding text-center>
+
+                <button *ngIf="email && password " ion-button color="danger" round (click)="submitLogin()">Login</button>
+                <!-- Show dead button if form is not filled -->
+                <button *ngIf="!email && !password" ion-button color="danger" clear round>Login Now</button>
+
+            </div>
+
+        </ion-list>
+    </form>
+
+    <br/>
+
+    <div padding text-center>
+        <button ion-button color="gray" block clear (click)="redirectToSignup()">Create new account</button>
+    </div>
+
+
+</ion-content>
